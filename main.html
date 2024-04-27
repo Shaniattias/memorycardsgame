@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>משחק זיכרון פרחים</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body style="background-image: url('images/bac.png')">
+<div class="container">
+  <div id="instructions-popup" class="instructions-popup">
+    <h2>הוראות המשחק</h2>
+    <p>מטרת המשחק היא לגלות זוגות של קלפים זהים.</p>
+    <p>כאשר המשתמש לוחץ על זוג קלפים, הקלפים יהיו פתוחים וישארו כך אם הם זהים.</p>
+    <p>המשחק מסתיים כאשר כל הזוגות הם פתוחים.</p>
+    <p>תהנו והמון בהצלחה!</p>
+    <button onclick="closeInstructions()">סגור</button>
+  </div>
+  <form id="gameForm" onsubmit="startGame(event)">
+    <input type="text" id="playerName" name="playerName" placeholder="שם השחקן/נית" required>
+    <input type="number" id="pairs" name="pairs" placeholder="מספר זוגות קלפים" min="1" max="30" required>
+    <div id="countdownOptions" style="display: none;">
+      <input type="number" id="countdownTime" name="countdownTime" placeholder="זמן מרבי לספירה לאחור (בדקות)" min="1" max="10">
+    </div>
+    <button type="button" onclick="openInstructions()">הוראות המשחק</button>
+    <button type="submit" id="startGameButton">התחל משחק</button>
+  </form>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
